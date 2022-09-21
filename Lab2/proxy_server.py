@@ -42,24 +42,6 @@ def main():
                 #connect proxy_end
                 proxy_end.connect((remote_ip, port))
 
-                # #send data
-                # send_full_data = conn.recv(BUFFER_SIZE)
-                # time.sleep(0.5)
-                # print("Sending data {data} to google".format(data=send_full_data))
-                # proxy_end.sendall(send_full_data)
-
-                # #shut down
-                # proxy_end.shutdown(socket.SHUT_WR)
-
-                # received_data = b""
-                # while True:
-                #     data = proxy_end.recv(BUFFER_SIZE)
-                #     if not data:
-                #         break
-                #     received_data += data
-
-                # print("Sending data {data} to client".format(data=received_data))
-
                 #send data back
                 p = Process(target=proxy_handler, args={conn, proxy_end})
 
