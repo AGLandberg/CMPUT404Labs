@@ -42,7 +42,6 @@ def main():
                 #connect proxy_end
                 proxy_end.connect((remote_ip, port))
 
-                #send data back
                 p = Process(target=proxy_handler, args={conn, proxy_end})
 
                 p.daemon = True
